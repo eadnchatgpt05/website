@@ -3,6 +3,7 @@ from .models import Product , ScaledImage , Promotion , Product_Page_Left , Prod
 from .models import Category , Subcategory , Category_Acceuil
 import random
 import os
+import stat
 
 # Create your views here.
 # Create your views here.
