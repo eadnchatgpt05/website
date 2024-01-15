@@ -144,9 +144,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 #Media 
-MEDIA_ROOT = os.path.join(BASE_DIR,"media")
+MEDIA_ROOT = '/tmp/media'  # Use /tmp for media files
 MEDIA_URL = '/media/'
-
 
 JAZZMIN_SETTINGS = {
     # title of the window (Will default to current_admin_site.site_title if absent or None)
