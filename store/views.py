@@ -2,8 +2,6 @@ from django.shortcuts import render
 from .models import Product , ScaledImage , Promotion , Product_Page_Left , Product_Page_Down , Index_Page_UP , Wilaya , Commune , Client
 from .models import Category , Subcategory , Category_Acceuil
 import random
-import os
-import stat
 
 # Create your views here.
 # Create your views here.
@@ -39,11 +37,6 @@ def index(request):
         "Acceuil" : Category_Acceuil.objects.all(),
     }
 
-    try:
-        path = '/var/task/'
-        os.chmod(path, stat.S_IRUSR | stat.S_IWUSR)
-    except OSError as e:
-        print(f"Error changing permissions for {path}: {e}")
 
     return render(request,"store/index.html",context)
 
