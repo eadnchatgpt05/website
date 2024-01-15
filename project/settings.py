@@ -145,7 +145,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #Media 
 MEDIA_ROOT = "/media"
-MEDIA_URL = '/var/task/media/'
+MEDIA_URL = '/media/'
 
 
 JAZZMIN_SETTINGS = {
