@@ -15,7 +15,7 @@ import os
 from project.custom_storage import CustomFileSystemStorage
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = "/tmp/"
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 DEFAULT_FILE_STORAGE = 'project.custom_storage.CustomFileSystemStorage'
 
