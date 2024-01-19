@@ -1717,6 +1717,9 @@
             {% csrf_token %}
             <input type="hidden" name="nomPro" value="{{nomPro}}">
             <input type="hidden" name="qtePro" value="{{qtePro}}">
+            <input type="hidden" name="pixel" value="{{pixel}}">
+
+            
             <input id = "hidenTotal" type="hidden" name="hidenTotal" value="{{total}}">
 
               <div class="row pt-0">
@@ -1725,6 +1728,7 @@
                     <div class="clear">
                       <div class="woocommerce-billing-fields">
                         <h3>Détails de facturation</h3>
+
 
                         <div class="woocommerce-billing-fields__field-wrapper">
                           <p

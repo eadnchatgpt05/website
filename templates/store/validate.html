@@ -1232,6 +1232,10 @@
       }
     </style>
     <!-- Fonts Plugin CSS -->
+    
+    {% if pixel != None %}
+      {{pixel|safe}}
+    {% endif %}
   </head>
 
   <body
@@ -1705,6 +1709,7 @@
           
           <div class="col medium-9">
             <header class="page-title">
+
               <h1 class="page-title">votre commande a été validée , un agent vas vous conatcter pour confirmer l'achat</h1>
             </header>
             

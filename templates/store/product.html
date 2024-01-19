@@ -1202,9 +1202,7 @@
     </style>
     <!-- Fonts Plugin CSS -->
 
-    {% if Product.pixel != None %}
-    {{Product.pixel|safe}}
-    {% endif %}
+    
 
 
 
@@ -1894,6 +1892,11 @@ text-align:right;" >
                     {% csrf_token %}
 
                     <input type="hidden" name="nameP" value="{{Product.name}}">
+                    
+                    <input type="hidden" name="pixelProd" value="{{Product.pixel}}">
+                    
+                    
+
     
                       <div class="sticky-add-to-cart-wrapper">
                         <div class="sticky-add-to-cart">

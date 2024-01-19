@@ -210,7 +210,9 @@ def purchase(request):
 	
 	prixPro = request.POST["prix"]
 	qtePro = request.POST["quantity"]
-
+	
+	pixel =  request.POST["pixelProd"]
+	
 
 	w = Wilaya.objects.all()
 	c = Commune.objects.all()
@@ -240,6 +242,7 @@ def purchase(request):
 		"nomPro" : nomPro ,
 		"prixPro" : prix ,
 		"qtePro" : int(qtePro) ,
+		"pixel":pixel,
 		"total" : total
 	}
 	return render(request, 'store/purchase.html',context)
@@ -361,6 +364,7 @@ def validate(request):
 	quantity = request.POST["qtePro"]
 	total = request.POST["hidenTotal"]
 
+	pixel = request.POST["pixel"]
 
 	new_client = Client(fname=fname,lname=lname,wilaya=wilaya,
 			commune=commune,adresse=city,phone=phone,produit=prod,
@@ -369,7 +373,8 @@ def validate(request):
 	new_client.save()
 
 
-	return render(request,"store/validate.html")
+
+	return render(request,"store/validate.html",{"pixel":pixel})
 
 
 
