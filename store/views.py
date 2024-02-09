@@ -371,6 +371,7 @@ def validate(request,product_name):
 		fname = "Client"
 
 	product_name = product_name.replace("-"," ")
+	product_name = product_name.replace("%20"," ")
 	print("here is : "+product_name)
 	product = Product.objects.get(name=product_name)
 	pixel = product.pixel
