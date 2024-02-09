@@ -8,6 +8,9 @@
 >
   <head>
     <meta charset="UTF-8" />
+    {% if pixel != None %}
+      {{pixel|safe}}
+    {% endif %}
     <link rel="profile" href="https://gmpg.org/xfn/11" />
     <link rel="pingback" href="https://oktobit.store/xmlrpc.php" />
 
@@ -1233,9 +1236,7 @@
     </style>
     <!-- Fonts Plugin CSS -->
     
-    {% if pixel != None %}
-      {{pixel|safe}}
-    {% endif %}
+    
   </head>
 
   <body
