@@ -382,8 +382,8 @@ def validate(request,product_name):
 	return render(request,"store/validate.html",{"pixel":pixel})
 
 
-def test(request):
-	return render(request,"store/test.html")
+def pixel(request):
+	return render(request,"store/pixel.html")
 
 
 
