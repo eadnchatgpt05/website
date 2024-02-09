@@ -7,6 +7,7 @@ urlpatterns = [
 	path('shop/',views.shop,name='shop'),
 	path('contact/',views.contact,name='contact'),
 	path('aboutus/',views.aboutus,name='aboutus'),
+	path('pixel/',views.pixel,name='pixel'),
 	path('test/',views.test,name='test'),
 	path('purchase/',views.purchase,name='purchase'),
 	path('validate/<str:product_name>',views.validate,name='validate'),	
