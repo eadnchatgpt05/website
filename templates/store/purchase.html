@@ -1712,7 +1712,7 @@
               method = "post"
               name="checkout"
               class="checkout woocommerce-checkout"
-              action="{% url 'validate' %}"
+              action="{% url 'validate' product_name=nomPro %}"
             >
             {% csrf_token %}
             <input type="hidden" name="nomPro" value="{{nomPro}}">

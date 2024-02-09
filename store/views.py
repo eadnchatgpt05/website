@@ -346,36 +346,39 @@ def get_client_ip(request):
         ip = request.META.get('REMOTE_ADDR')
     return ip
 
-def validate(request):
+def validate(request,product_name):
 	ip = get_client_ip(request)
 	
 	try:
 		fname = request.POST["billing_first_name"]
+		lname = request.POST["billing_last_name"]
+		wilaya = request.POST["billing_state"]
+		commune = request.POST["billing_commune"]
+		city = request.POST["billing_city"]
+		phone = request.POST["billing_phone"]
+		prod = request.POST["nomPro"]
+		quantity = request.POST["qtePro"]
+		total = request.POST["hidenTotal"]
+
+		
+		new_client = Client(fname=fname,lname=lname,wilaya=wilaya,
+				commune=commune,adresse=city,phone=phone,produit=prod,
+				qte=quantity,prix=total)
+
+		new_client.save()
+		
 	except Exception as e:
-		return render(request,"store/404.html")
+		fname = "Client"
 
-	fname = request.POST["billing_first_name"]
-	lname = request.POST["billing_last_name"]
-	wilaya = request.POST["billing_state"]
-	commune = request.POST["billing_commune"]
-	city = request.POST["billing_city"]
-	phone = request.POST["billing_phone"]
-	prod = request.POST["nomPro"]
-	quantity = request.POST["qtePro"]
-	total = request.POST["hidenTotal"]
+	product_name = product_name.replace("-"," ")
+	print("here is : "+product_name)
+	product = Product.objects.get(name=product_name)
+	pixel = product.pixel
 
-	pixel = request.POST["pixel"]
-
-	new_client = Client(fname=fname,lname=lname,wilaya=wilaya,
-			commune=commune,adresse=city,phone=phone,produit=prod,
-			qte=quantity,prix=total)
-
-	new_client.save()
-
+	
 
 
 	return render(request,"store/validate.html",{"pixel":pixel})
-
 
 
 
